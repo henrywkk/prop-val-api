@@ -101,6 +101,7 @@ function hase_all_area(){
     var promiseList = []
     return hase_search('area').then(function(res){
         area_list = area_list.concat(JSON.parse(res))
+        return area_list
     })
     
 }
@@ -196,6 +197,7 @@ async function hase_all_district() {
         //print_all_district()
         //console.log(area_district_list)
         //console.log(JSON.stringify(area_district_list))
+        return area_district_list
     })
 
     
@@ -250,9 +252,9 @@ async function hase_all_estate(){
             estate_list = estate_list.concat(JSON.parse(responses[res_idx]))
             //console.log(JSON.parse(responses[res_idx]))
         }
-
-        console.log(estate_list.length)
-        print_all_estate()
+        return estate_list
+        //console.log(estate_list.length)
+        //print_all_estate()
     })
 }
 
